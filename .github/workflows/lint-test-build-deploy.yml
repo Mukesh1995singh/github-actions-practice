@@ -1,7 +1,11 @@
-name: Lint Test Build Deploy Pipeline
+name: Lint Test Build Pipeline
 
 on:
   push:
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   ci:
@@ -30,7 +34,11 @@ jobs:
       - name: Run Build
         run: npm run build
 
-      - name: Deploy Application (Simulated)
+      - name: Create GitHub Issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          echo "Deploying application to production..."
-          echo "Application deployed successfully!"
+          gh issue create \
+            --title "CI Pipeline Failed" \
+            --body "Build failed for commit ${{ github.sha }}"
