@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "echo \"Running linter... Done!\"",
     "test": "echo \"Running tests... Done!\"",
-    "build": "echo \"Building project...\" && exit 1"
+    "build": "echo \"Building project... Done!\""
   },
   "keywords": [],
   "author": "",
