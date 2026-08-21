@@ -1,0 +1,14 @@
+{
+  "name": "github-actions-practice",
+  "version": "1.0.0",
+  "description": "GitHub Actions practice project",
+  "main": "index.js",
+  "scripts": {
+    "lint": "echo \"Running linter... Done!\"",
+    "test": "echo \"Running tests... Done!\"",
+    "build": "echo \"Building project... Done!\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
