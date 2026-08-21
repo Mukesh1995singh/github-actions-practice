@@ -4,7 +4,8 @@ on:
   push:
 
 jobs:
-  ci-cd:
+  ci:
+    name: Lint Test Build Pipeline
     runs-on: ubuntu-latest
 
     steps:
