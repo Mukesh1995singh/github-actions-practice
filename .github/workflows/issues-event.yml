@@ -1,22 +1,8 @@
-name: Log Issue Events
-
-on:
-  issues:
-    types: [opened, edited, closed]
-
+name: Handle Issues
+on: issues
 jobs:
-  log-issue-details:
+  output-info:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Print Issue Metadata
-        run: |
-          echo "An issue event was triggered!"
-          echo "Action: ${{ github.event.action }}"
-          echo "Issue Title: ${{ github.event.issue.title }}"
-          echo "Created By: ${{ github.event.issue.user.login }}"
-
-      - name: Dump Full Event Payload
-        run: |
-          echo "Full event JSON payload:"
-          echo '${{ toJson(github.event) }}'
+      - name: Output event details
+        run: echo "${{ toJSON(github.event) }}"
